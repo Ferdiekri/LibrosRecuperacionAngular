@@ -1,0 +1,31 @@
+﻿<!DOCTYPE html>
+<html lang="es" ng-app="myApp">
+  <head>
+    <meta charset="utf-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <title>ES6</title>
+    <meta name="description" content="" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    
+    <link type="text/css" rel="stylesheet"  href="https://stackpath.bootstrapcdn.com/bootstrap/4.1.0/css/bootstrap.min.css"/>
+    <link rel="stylesheet" href="css/styles.css" />
+
+    <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.6.9/angular.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/angular-ui-router/1.0.3/angular-ui-router.js"></script>
+    <script src="//unpkg.com/@uirouter/visualizer@4"></script>
+
+    <script src="controllers/inicioController.js"></script>
+    <script src="app.js"></script>
+  </head>
+
+  <body class="container" ng-strict-di ng-cloak>
+
+    <nav>
+      <a href="#">Inicio</a>
+      <a href="#!/leeme">Leeme</a>
+    </nav>
+
+    <div ui-view></div>
+	
+  </body>
+</html>

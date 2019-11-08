@@ -1,0 +1,22 @@
+﻿{
+  "compileOnSave": true,
+
+  "compilerOptions": {
+      "module": "commonjs",
+      "noImplicitAny": false,
+      "downlevelIteration": true,
+      "removeComments": true,
+      "preserveConstEnums": true,
+      "sourceMap": true,
+      "target": "es5",
+      "watch": true,
+      "lib": [ "dom", "es2015.promise", "es5", "es2015.collection", "es2015.iterable" ]
+      
+  },
+  "exclude": [
+      "node_modules",
+      "bower_components",
+      "typings",
+      "Scripts/typings"
+  ]
+}
