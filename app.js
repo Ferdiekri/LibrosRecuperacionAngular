@@ -1,7 +1,9 @@
 var Visualizer = window["ui-router-visualizer"].Visualizer;
 var app = angular.module("myApp", ["ui.router"]);
 app
-    .controller("inicioController", InicioController);
+    .controller("librosController", LibrosController)
+    .controller("libroController", LibroController)
+    .service("librosService", LibrosService);
 app.config([
     "$urlRouterProvider",
     "$stateProvider",
@@ -9,14 +11,26 @@ app.config([
         console.log("Entrando en la configuracion");
         $urlRouterProvider.when("", "/inicio");
         $stateProvider
-            .state("leeme", {
-            url: "/leeme",
-            templateUrl: "views/leeme.html"
-        })
             .state("inicio", {
             url: "/inicio",
-            templateUrl: "views/inicio.html",
-            controller: InicioController
+            templateUrl: "views/inicio.html"
+        })
+            .state("libros", {
+            url: "/libros",
+            templateUrl: "views/libros.html",
+            controller: "librosController"
+        })
+            .state("pagina", {
+            url: "/pagina",
+            templateUrl: "views/pagina.html"
+        })
+            .state("libro", {
+            url: "/libros/:libroId",
+            templateUrl: "views/libro.html",
+            controller: "libroController",
+            resolve: {
+                libroId: ["$stateParams", function ($stateParams) { return $stateParams.libroId; }],
+            }
         });
     }
 ]);

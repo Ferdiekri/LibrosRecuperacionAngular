@@ -1,0 +1,20 @@
+<h2>{{ vm.titulo | uppercase }}</h2>
+<hr>
+
+<div class="row">
+    <div class="col-8">
+        <ul class="list-group">
+            <li class="list-group-item list-group-item-info" ng-repeat="libro in vm.libros">
+                <a ui-sref="libro({ libroId: libro.id })">
+                    {{ libro.titulo}} - {{ libro.autor }}
+                </a>
+            </li>
+        </ul>
+    </div>
+    <div class="col-4">
+        <pre><code>
+            {{ vm.libros | json }}
+        </code></pre>
+    </div>
+</div>
+

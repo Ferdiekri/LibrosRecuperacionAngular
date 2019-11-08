@@ -7,25 +7,44 @@
     <meta name="description" content="" />
     <meta name="viewport" content="width=device-width, initial-scale=1" />
     
-    <link type="text/css" rel="stylesheet"  href="https://stackpath.bootstrapcdn.com/bootstrap/4.1.0/css/bootstrap.min.css"/>
-    <link rel="stylesheet" href="css/styles.css" />
+    <!-- Hojas de estilo -->
+    <link type="text/css" rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.1.0/css/bootstrap.min.css"/>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.11.2/css/all.css">
+    <link rel="stylesheet" href="resources/css/styles.css" />
 
+    <!-- AngularJS -->
     <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.6.9/angular.js"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/angular-ui-router/1.0.3/angular-ui-router.js"></script>
     <script src="//unpkg.com/@uirouter/visualizer@4"></script>
+    
+    <!-- Modelo de datos -->
+    <script src="model/ILibro.js"></script>
+    
 
-    <script src="controllers/inicioController.js"></script>
+    <!-- Servicios -->
+    <script src="services/libros.service.js"></script>
+
+    <!-- Controladores -->
+    <script src="controllers/libros.controller.js"></script>
+    <script src="controllers/libro.controller.js"></script>
+
+    <!-- Nuestra App -->
     <script src="app.js"></script>
+    <script src="routing.js"></script>  
+
   </head>
 
-  <body class="container" ng-strict-di ng-cloak>
+  <body  ng-strict-di ng-cloak>
 
-    <nav>
-      <a href="#">Inicio</a>
-      <a href="#!/leeme">Leeme</a>
-    </nav>
+    <div ng-include="'views/navbar.html'" ></div>
+    
+    <!-- Vistas a cargar dinámicamente al navegar. -->
+    <main ui-view class="container"></main>
 
-    <div ui-view></div>
-	
-  </body>
+    <!-- Bootstrap-->
+    <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js"></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js"></script>
+
+</body>
 </html>

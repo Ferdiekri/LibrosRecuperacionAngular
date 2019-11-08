@@ -1,0 +1,66 @@
+{
+  "libros": [
+    {
+      "id": 1,
+      "titulo": "Los 3 Cerditos",
+      "autor": "Anónimo",
+      "paginas": [
+        {
+          "id": 1,
+          "texto": "Érase una vez..."
+        },
+        {
+          "id": 2,
+          "texto": "que unos cerditos"
+        },
+        {
+          "id": 3,
+          "texto": "vivian felices hasta que vino el lobo"
+        }
+      ]
+    },
+    {
+      "id": 2,
+      "titulo": "Caperucita Roja",
+      "autor": "Perrault",
+      "paginas": [
+        {
+          "id": 1,
+          "texto": "Érase una vez..."
+        },
+        {
+          "id": 2,
+          "texto": "que unos una niña tenía una capa roja como la sangre"
+        }
+      ]
+    },
+    {
+      "id": 3,
+      "titulo": "Cenicienta",
+      "autor": "Hermanos Grimm",
+      "paginas": [
+        {
+          "id": 1,
+          "texto": "Érase una vez..."
+        },
+        {
+          "id": 2,
+          "texto": "una chica muy sucia"
+        },
+        {
+          "id": 3,
+          "texto": "que llamaban Cenicienta"
+        },
+        {
+          "id": 4,
+          "texto": "Estaba todo el día limpiando"
+        },
+        {
+          "id": 5,
+          "texto": "y no le dejaba ir al baile"
+        }
+      ]
+    }
+
+  ]
+}
