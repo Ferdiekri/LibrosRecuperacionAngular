@@ -13,6 +13,22 @@ var LibrosService = (function () {
                 return res.data;
             });
         };
+        this.modificarPagina = function (id, libro) {
+            var ruta = _this.URL + id;
+            console.trace('PUT ' + ruta);
+            return _this.http.put(ruta, libro).then(function (res) {
+                console.debug("Petición Rest correcta.");
+                return res.data;
+            });
+        };
+        this.modificarLibro = function (libro) {
+            var ruta = _this.URL + libro.id;
+            console.trace('PUT ' + ruta);
+            return _this.http.put(ruta, libro).then(function (res) {
+                console.debug("Petición Rest correcta.");
+                return res.data;
+            });
+        };
         this.deleteLibro = function (id) {
             var ruta = _this.URL + id;
             console.trace('DELETE ' + ruta);
@@ -24,14 +40,6 @@ var LibrosService = (function () {
         this.crearLibro = function (libro) {
             console.trace('POST ' + _this.URL);
             return _this.http.post(_this.URL, libro).then(function (res) {
-                console.debug("Petición Rest correcta.");
-                return res.data;
-            });
-        };
-        this.modificarLibro = function (id, libro) {
-            var ruta = _this.URL + id;
-            console.trace('PUT ' + ruta);
-            return _this.http.put(ruta, libro).then(function (res) {
                 console.debug("Petición Rest correcta.");
                 return res.data;
             });

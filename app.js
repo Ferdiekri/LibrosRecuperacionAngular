@@ -20,10 +20,6 @@ app.config([
             templateUrl: "views/libros.html",
             controller: "librosController"
         })
-            .state("pagina", {
-            url: "/pagina",
-            templateUrl: "views/pagina.html"
-        })
             .state("libro", {
             url: "/libros/:libroId",
             templateUrl: "views/libro.html",

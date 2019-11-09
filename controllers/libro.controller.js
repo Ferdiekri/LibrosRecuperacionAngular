@@ -5,6 +5,9 @@ var LibroController = (function () {
         this.scope = $scope;
         $scope.vm = this;
         $scope.vm.libroId = libroId;
+        $scope.vm.nuevaPagina = "Introduce el texto de la nueva página.";
+        $scope.vm.mostrarNuevo = false;
+        $scope.vm.mostrarEditar = false;
         console.trace("LibroId: %s", $scope.vm.libroId);
         $scope.vm.titulo = "Detalle del libro #" + $scope.vm.libroId;
         librosService.getLibroById($scope.vm.libroId).then(function (data) {
@@ -12,6 +15,7 @@ var LibroController = (function () {
             $scope.vm.libro = data;
             $scope.vm.paginas = data.paginas;
             $scope.vm.pagina = $scope.vm.paginas[0];
+            $scope.vm.copiaLibro = angular.copy($scope.vm.libro);
         });
         $scope.vm.cambiarPagina = function (accion) {
             console.trace("cambiarPagina ANTES: " + $scope.vm.pagina.id);
@@ -46,6 +50,45 @@ var LibroController = (function () {
                 $scope.vm.pagina = $scope.vm.paginas[$scope.vm.saltarPagina - 1];
                 $scope.vm.mensaje = undefined;
             }
+        };
+        $scope.vm.guardarPagina = function () {
+            console.trace("guardarPagina: %o", $scope.vm.nuevaPagina);
+            $scope.vm.mensaje = undefined;
+            var ultimaPagina = $scope.vm.paginas[$scope.vm.paginas.length - 1].id + 1;
+            var nuevoLibro = angular.copy($scope.vm.libro);
+            console.trace("guardarPagina: %o", nuevoLibro);
+            var nuevaPag = { "id": ultimaPagina, "texto": $scope.vm.nuevaPagina };
+            $scope.vm.paginas.push(nuevaPag);
+            nuevoLibro.paginas = $scope.vm.paginas;
+            console.trace("guardarPagina: %o", $scope.vm.nuevaPagina);
+            librosService.insertNuevaPagina(nuevoLibro.id, nuevoLibro).then(function (data) {
+                console.trace("Libro leídos: %o", data);
+                $scope.vm.libro = data;
+                $scope.vm.mensaje = "Página añadida correctamente.";
+            });
+        };
+        $scope.vm.editarLibro = function () {
+            console.trace("editarLibro %o", $scope.vm.copiaLibro);
+            $scope.vm.mensaje = undefined;
+            librosService.modificarLibro($scope.vm.copiaLibro).then(function (data) {
+                $scope.vm.libro = $scope.vm.copiaLibro;
+                $scope.vm.mensaje = "Datos del libro modificados satisfactoriamente.";
+            });
+        };
+        $scope.vm.eliminarPagina = function (pagina) {
+            console.trace("eliminarPagina %o", pagina);
+            $scope.vm.mensaje = undefined;
+            var indice = $scope.vm.paginas.indexOf(pagina);
+            var nuevoLibro = angular.copy($scope.vm.libro);
+            console.trace("Indice de la página %o", indice);
+            $scope.vm.paginas.splice(indice, 1);
+            nuevoLibro.paginas = $scope.vm.paginas;
+            librosService.modificarPagina(nuevoLibro.id, nuevoLibro).then(function (data) {
+                console.trace("Libro leídos: %o", data);
+                $scope.vm.libro = data;
+                $scope.vm.mensaje = "Página eliminada correctamente.";
+                $scope.vm.pagina = $scope.vm.paginas[0];
+            });
         };
     }
     LibroController.prototype.$onDestroy = function () { };

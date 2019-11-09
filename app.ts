@@ -32,12 +32,6 @@ app.config([
                             controller: "librosController"      
                             }
         )
-        // Pagina
-        .state("pagina",    {
-                            url: "/pagina",
-                            templateUrl: "views/pagina.html"        
-                            }
-        )
         // Libro con id
         .state("libro",     {
                             url: "/libros/:libroId",

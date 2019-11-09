@@ -12,6 +12,10 @@ interface ILibrosService{
      */
     getLibroById(id: number): angular.IPromise<any>;
 
+    modificarPagina(id: number, libro: ILibro): angular.IPromise<any>;
+
+    modificarLibro(libro: ILibro): angular.IPromise<any>;
+
     /**
      * Peticion DELETE para borrar un libro.
      * @param id del libro a borrar
@@ -24,12 +28,8 @@ interface ILibrosService{
      */
     crearLibro(libro: ILibro): angular.IPromise<any>;
 
-    /**
-     * Peticion PUT para modificar un libro ya existente.
-     * @param id del libro a modificar
-     * @param libro nuevos datos del libro
-     */
-    modificarLibro(id: number, libro: ILibro): angular.IPromise<any>;  
+
+
 }
 
 class LibrosService implements ILibrosService{
@@ -60,6 +60,27 @@ class LibrosService implements ILibrosService{
 
     }
 
+    public modificarPagina = (id: number, libro: ILibro): angular.IPromise<any> => {
+        let ruta = this.URL + id;
+        console.trace('PUT ' + ruta);
+        return this.http.put( ruta, libro ).then(
+            ( res ) => {
+                console.debug("Petición Rest correcta.");
+                return res.data;
+            }
+        );
+    }
+
+    public modificarLibro = (libro: ILibro): angular.IPromise<any> => {
+        let ruta = this.URL + libro.id;
+        console.trace('PUT ' + ruta);
+        return this.http.put(ruta, libro).then(
+            (res) => {
+                console.debug("Petición Rest correcta.");
+                return res.data;
+            });
+    }
+
     public deleteLibro = (id: number): angular.IPromise<any> => {
         let ruta = this.URL + id;
         console.trace('DELETE ' + ruta);
@@ -79,23 +100,6 @@ class LibrosService implements ILibrosService{
             });
     }
 
-    public modificarLibro = (id: number, libro: ILibro): angular.IPromise<any> => {
-        let ruta = this.URL + id;
-        console.trace('PUT ' + ruta);
-        return this.http.put(ruta, libro).then(
-            (res) => {
-                console.debug("Petición Rest correcta.");
-                return res.data;
-            });
-    }
+    
 
 }
-
-/**
- * -1 Lenguaje de programación
- * -1 Novedades ES6 -> todas
- * -1 Resolve (then consume, resolve construye)
- * 
- * 
- * 
-*/
