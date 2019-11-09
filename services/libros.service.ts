@@ -100,6 +100,4 @@ class LibrosService implements ILibrosService{
             });
     }
 
-    
-
 }

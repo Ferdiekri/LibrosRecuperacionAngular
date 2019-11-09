@@ -61,7 +61,7 @@ var LibroController = (function () {
             $scope.vm.paginas.push(nuevaPag);
             nuevoLibro.paginas = $scope.vm.paginas;
             console.trace("guardarPagina: %o", $scope.vm.nuevaPagina);
-            librosService.insertNuevaPagina(nuevoLibro.id, nuevoLibro).then(function (data) {
+            librosService.modificarLibro(nuevoLibro).then(function (data) {
                 console.trace("Libro leídos: %o", data);
                 $scope.vm.libro = data;
                 $scope.vm.mensaje = "Página añadida correctamente.";

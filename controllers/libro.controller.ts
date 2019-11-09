@@ -101,13 +101,13 @@ class LibroController implements ng.IController{
             nuevoLibro.paginas = $scope.vm.paginas;
             console.trace("guardarPagina: %o", $scope.vm.nuevaPagina);
 
-            librosService.insertNuevaPagina(nuevoLibro.id, nuevoLibro).then(
+            librosService.modificarLibro(nuevoLibro).then(
                 ( data ) => {
                     console.trace("Libro leídos: %o", data);
                     $scope.vm.libro = data;
                     $scope.vm.mensaje = "Página añadida correctamente.";
                 }
-            ); // insertNuevaPagina()
+            ); // modificarLibro()
            
         } // guardarPagina()
 
