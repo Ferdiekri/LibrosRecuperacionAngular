@@ -17,9 +17,9 @@ var ResumenController = (function () {
                     "precio": elem.precio
                 };
             });
+            $scope.vm.ejercicio3 = $scope.vm.viviendas.filter(function (elem) { return elem.habitaciones > 3; }).map(function (elem) { return elem.precio; }).reduce(function (acum, cv) { return acum + cv; });
             $scope.vm.ejercicio2 = _this.$scope.vm.viviendas.find(function (elem) { return elem.servicios; });
             $scope.vm.ejercicio2.find(function (elem) { return elem.nombre === "cocina" && elem.disponible === true; });
-            $scope.vm.ejercicio3 = $scope.vm.viviendas.filter(function (elem) { return elem.habitaciones > 3; }).map(function (elem) { return elem.precio; }).reduce(function (acum, cv) { return acum + cv; });
             console.trace("PAREMOS");
             var aux = $scope.vm.viviendas.map(function (elem) { return elem.servicios; });
             $scope.vm.ejercicio4 = aux.map(function (elem) { return elem.nombre; });

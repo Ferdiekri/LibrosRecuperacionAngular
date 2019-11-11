@@ -42,22 +42,25 @@ class ResumenController implements ng.IController{
                                 "precio": elem.precio
                                 }
                             }
-                );                
+                );   
                 
-                // 2. Primer inmueble con un servicio cocina disponible                
-                $scope.vm.ejercicio2 = this.$scope.vm.viviendas.find(
-                    (elem) => elem.servicios);
-                $scope.vm.ejercicio2.find(
-                    (elem)=> elem.nombre === "cocina" && elem.disponible === true // dentro del array de servicios, buscamos cocina
-                );
-
                 // 3. Precio total de todas las viviendas en alquiler con mas de 3 habitaciones
                 $scope.vm.ejercicio3 = $scope.vm.viviendas.filter(
                     (elem) => elem.habitaciones>3).map(
                         (elem) => elem.precio).reduce(
                             (acum,cv) => acum+cv
                     );
-
+                
+                // 2. Primer inmueble con un servicio cocina disponible                
+               $scope.vm.ejercicio2 = this.$scope.vm.viviendas.find(
+                    (elem) => elem.servicios);
+                $scope.vm.ejercicio2.find(
+                    (elem)=> elem.nombre === "cocina" && elem.disponible === true // dentro del array de servicios, buscamos cocina
+                );
+/*
+                $scope.vm.ejercicio2 = $scope.vm.viviendas.filter((elem)=>elem.servicios);
+                $scope.vm.ejercicio2 = $scope.vm.ejercicio2.find((elem)=>elem.nombre === 'cocina' && elem.disponible === true );
+*/
 
                 // 4. Listado de todos los nombres de servicios sin repetición
                 console.trace("PAREMOS");
@@ -80,6 +83,7 @@ class ResumenController implements ng.IController{
 
             }
         ); // getViviendas()
+        
 
     } // constructor
 }

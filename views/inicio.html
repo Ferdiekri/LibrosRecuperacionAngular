@@ -24,19 +24,16 @@
                 </label>
             </div>
         </div> 
-        <div class="row">
+        <div class="row m-3">
             <strong>Rango de precio:</strong>
-            <label>MIN {{ vm.filtro.min }}</label>
-            <input type="range" ng-model="vm.filtro.min" step="1" min="0">
-
-            <label>MAX {{ vm.filtro.max }}</label>
-            <input type="range" ng-model="vm.filtro.max" step="1" min="0">
+            
         </div>
-        <div class="row">
-            <label for="min">Min:</label>            
-            <input type="text" name=min class="form-control w-25">
-            <label for="max">Max:</label>
-            <input type="text" name="max" class="form-control w-25">
+        <div class="row m-3">
+            <label>MIN</label>
+            <input type="number" ng-model="vm.filtro.min" step="1" min="0">
+
+            <label>Max</label>
+            <input type="number" ng-model="vm.filtro.max" step="1" min="0">
         </div> <!-- fin filtros -->
 
         <div class="card text-white bg-primary m-3">
