@@ -35,14 +35,15 @@ class ResumenController implements ng.IController{
                 $scope.vm.mensaje = "Viviendas cargadas correctamente.";
 
                 // 1.Listado ordenado por nombre con los siguientes atributos [ nombre, precio ]
-                $scope.vm.ejercicio1 = $scope.vm.viviendas.map(
+                let auxi: any = $scope.vm.viviendas.map(
                     (elem) => {
                                 return {
                                 "nombre": elem.nombre,
                                 "precio": elem.precio
                                 }
                             }
-                );   
+                );
+                $scope.vm.ejercicio1 = [...new Set(auxi)].sort();
                 
                 // 3. Precio total de todas las viviendas en alquiler con mas de 3 habitaciones
                 $scope.vm.ejercicio3 = $scope.vm.viviendas.filter(
@@ -63,21 +64,10 @@ class ResumenController implements ng.IController{
 */
 
                 // 4. Listado de todos los nombres de servicios sin repetición
-                console.trace("PAREMOS");
-               let aux = $scope.vm.viviendas.map(
+                $scope.vm.ejercicio4 = $scope.vm.viviendas.map(
                     (elem) => elem.servicios
-                    );
-                
-                $scope.vm.ejercicio4 = aux.map( (elem) => elem.nombre);
+                );
 
-               // $scope.vm.ejercicio4 = [...new Set(serviciosDuplicados)].sort(); // eliminar duplicados y ordena
-
-               let serviciosDuplicados: Array<any> = $scope.vm.viviendas
-                    .map(v => v.servicios)                             // quedarnos con las servicios            
-                                                            // quedarnos con el titulo de la accion
-
-                    $scope.vm.ejercicio4 = serviciosDuplicados;
-               // $scope.vm.ejercicio4 = [...new Set(serviciosDuplicados)].sort(); // eliminar duplicados y ordena
 
 
 
