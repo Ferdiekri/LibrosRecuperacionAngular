@@ -1,0 +1,102 @@
+<h2>{{ vm.titulo }}</h2>
+<div class="row">
+    <div class="col">
+
+        <form name="formulario" ng-submit="vm.nuevaVivienda()" novalidate>
+
+            <div class="row"> <!-- Nombre -->
+                <div class="col-4">
+                    <label for="titulo">Nombre</label>
+                </div>
+                <div class="form-group col-8">
+                    <input type="text" name="titulo" class="form-control" required minlength="2" maxlength="150" ng-model="vm.viviendaNueva.titulo">
+                </div>
+            </div>
+
+            <div class="row"> <!-- Dirección -->
+                <div class="col-4">
+                        <label for="direccion">Dirección</label>
+                </div>
+                <div class="form-group col-8">
+                    <input type="text" name="direccion" class="form-control" required minlength="2" maxlength="150" ng-model="vm.viviendaNueva.direccion">
+                </div>
+            </div>
+
+            <div class="row"> <!-- Precio -->
+                <div class="col-4">
+                    <label for="precio">Precio</label>
+                        
+                </div>
+                <div class="form-group col-8">
+                    <input type="number" name="precio" class="form-control" required min="0" ng-model="vm.viviendaNueva.precio">
+                </div>
+            </div>
+            
+            <div class="row"> <!-- Habitaciones -->
+                <div class="col-4">
+                    <label for="habitaciones">Nº Habitaciones</label>
+                </div>
+                <div class="form-group col-8">
+                    <input type="number" name="habitaciones" class="form-control" required min="0" ng-model="vm.viviendaNueva.habitaciones">
+                </div>
+            </div>
+            <div class="row"> <!-- Alquiler -->
+                <div class="col-4">
+                    <label for="direccion">Tipo Vivienda</label>
+                </div>
+                <div class="form-group col-8">
+                    <select class="form-control" name="alquiler" ng-model="vm.viviendaNueva.alquiler">
+                        <option value="true">Alquiler</option>
+                        <option value="false">Venta</option>
+                    </select>
+                </div>
+            </div>
+
+            <div class="row"> <!-- Foto -->
+                <div class="col-4">
+                    <label for="foto">Imagen</label>
+                </div>
+                <div class="form-group col-8">
+                    <input type="text" name="foto" class="form-control" required min="0" ng-model="vm.viviendaNueva.foto">
+                </div>
+            </div>
+
+            <div class="row"> <!-- Servicios -->
+                <div class="col-4">
+                    <label for="alquiler">Servicios</label>
+                </div>
+                <div class="form-group col-8">
+                    <div class="form-check form-check-inline">
+                        <input class="form-check-input" type="checkbox" id="tv" value="tv" ng-model="vm.viviendaNueva.servicios.tv">
+                        <label class="form-check-label" for="tv">TV</label>
+                    </div>
+                    <div class="form-check form-check-inline">
+                        <input class="form-check-input" type="checkbox" id="wc" value="wc" ng-model="vm.viviendaNueva.servicios.wc">
+                        <label class="form-check-label" for="wc">WC</label>
+                    </div>
+                    <div class="form-check form-check-inline">
+                        <input class="form-check-input" type="checkbox" id="jardin" value="jardin" ng-model="vm.viviendaNueva.servicios.jardin">
+                        <label class="form-check-label" for="jardin">Jardín</label>
+                    </div>
+                    <div class="form-check form-check-inline">
+                        <input class="form-check-input" type="checkbox" id="cocina" value="cocina" ng-model="vm.viviendaNueva.servicios.cocina">
+                        <label class="form-check-label" for="cocina">Cocina</label>
+                    </div>
+
+                </div>
+            </div> 
+            <input type="submit" value="Crear Vivienda" class="btn btn-primary btn-block mt-3" ng-disabled="formulario.$invalid || formulario.$pristine">
+
+        </form>
+
+    </div> <!-- columna formulario -->
+
+    <div class="col">
+        <pre><code>
+            {{vm.viviendaNueva | json }}
+        </code></pre>
+    </div>
+</div>
+
+
+    

@@ -1,0 +1,33 @@
+<h2>{{ vm.titulo }}</h2>
+
+<div class="row">
+    <div class="col">
+        <p>Pantalla resumen con los siguientes datos ( filter, map, reduce ):</p>
+
+        <ol>
+            <li>Listado ordenado por nombre con los siguientes atributos [ nombre, precio ]</li>
+            <li>Primer inmueble con un servicio cocina disponible</li>
+            <li>Precio total de todas las viviendas en alquiler con mas de 3 habitaciones </li>
+            <li>Listado de todos los nombres de servicios sin repetición</li>
+        </ol>
+
+        <p class="border border-primary m-2 p-2">
+            {{ vm.ejercicio1 }}
+            <ul>
+                <li ng-repeat="v1 in vm.ejercicio1">
+                    {{ v1.nombre }} -- {{ v1.precio | curency }}
+                </li>
+            </ul>
+        </p>
+        <p class="border border-primary m-2 p-2">
+            {{ vm.ejercicio2 }}
+        </p>
+        <p class="border border-primary m-2 p-2">
+            {{ vm.ejercicio3 | currency }}
+        </p>
+        <p class="border border-primary m-2 p-2">
+            {{ vm.ejercicio4 }}
+        </p>
+
+    </div>
+</div>

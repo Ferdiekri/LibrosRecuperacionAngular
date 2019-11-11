@@ -3,9 +3,10 @@ const app = angular.module("myApp", ["ui.router"]);
 
 
 app 
-  .controller("librosController", LibrosController)
-  .controller("libroController", LibroController)
-  .service("librosService", LibrosService);
+  .controller("inicioController", InicioController)
+  .controller("formularioController", FormularioController)
+  .controller("resumenController", ResumenController)
+  .service("viviendasService", ViviendasService);
 
 app.config([
   "$urlRouterProvider",
@@ -20,29 +21,32 @@ app.config([
     $stateProvider
         
         // Home.
-        .state("inicio",    {
-                            url: "/inicio",
-                            templateUrl: "views/inicio.html"        
-                            }
+            .state("inicio",    {
+                                  url: "/inicio",
+                                  templateUrl: "views/inicio.html",
+                                  controller: "inicioController"     
+                                }
         )
-        // Libros
-        .state("libros",    {
-                            url: "/libros",
-                            templateUrl: "views/libros.html"  ,
-                            controller: "librosController"      
-                            }
+        // Formulario
+        .state("formulario",    {
+                                  url: "/formulario",
+                                  templateUrl: "views/formulario.html",
+                                  controller: "formularioController"      
+                                }
         )
-        // Libro con id
-        .state("libro",     {
-                            url: "/libros/:libroId",
-                            templateUrl: "views/libro.html",
-                            controller: "libroController",
-                            resolve:
-                              {
-                                libroId: ["$stateParams", ($stateParams: angular.ui.IStateParamsService) => $stateParams.libroId],
-                              }
-                            }
-      )
+        // Resumen
+          .state("resumen",     {
+                                  url: "/resumen",
+                                  templateUrl: "views/resumen.html",
+                                  controller: "resumenController"
+                                }
+        )
+        // Léeme
+        .state("leeme",         {
+                                  url: "/leeme",
+                                  templateUrl: "views/leeme.html"
+                                }
+)
 
   }
 ]);

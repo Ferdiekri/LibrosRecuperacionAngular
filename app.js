@@ -1,9 +1,10 @@
 var Visualizer = window["ui-router-visualizer"].Visualizer;
 var app = angular.module("myApp", ["ui.router"]);
 app
-    .controller("librosController", LibrosController)
-    .controller("libroController", LibroController)
-    .service("librosService", LibrosService);
+    .controller("inicioController", InicioController)
+    .controller("formularioController", FormularioController)
+    .controller("resumenController", ResumenController)
+    .service("viviendasService", ViviendasService);
 app.config([
     "$urlRouterProvider",
     "$stateProvider",
@@ -13,20 +14,22 @@ app.config([
         $stateProvider
             .state("inicio", {
             url: "/inicio",
-            templateUrl: "views/inicio.html"
+            templateUrl: "views/inicio.html",
+            controller: "inicioController"
         })
-            .state("libros", {
-            url: "/libros",
-            templateUrl: "views/libros.html",
-            controller: "librosController"
+            .state("formulario", {
+            url: "/formulario",
+            templateUrl: "views/formulario.html",
+            controller: "formularioController"
         })
-            .state("libro", {
-            url: "/libros/:libroId",
-            templateUrl: "views/libro.html",
-            controller: "libroController",
-            resolve: {
-                libroId: ["$stateParams", function ($stateParams) { return $stateParams.libroId; }],
-            }
+            .state("resumen", {
+            url: "/resumen",
+            templateUrl: "views/resumen.html",
+            controller: "resumenController"
+        })
+            .state("leeme", {
+            url: "/leeme",
+            templateUrl: "views/leeme.html"
         });
     }
 ]);

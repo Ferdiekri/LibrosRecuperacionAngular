@@ -1,38 +1,180 @@
 {
-  "libros": [
+  "viviendas": [
     {
       "id": 1,
-      "titulo": "Los 3 Cerditos",
-      "autor": "Anónimo",
-      "paginas": [
+      "nombre": "Ático junto a la ría",
+      "precio": 2500,
+      "alquiler": true,
+      "habitaciones": 300,
+      "foto": "http://www.ctearquitectura.es/wp-content/uploads/2017/09/torre-iberdrola-1493414562.jpg",
+      "direccion": "Euskadi Plaza, 5, 48009 Bilbo",
+      "servicios": [
         {
-          "id": 1,
-          "texto": "Érase una vez..."
+          "nombre": "tv",
+          "disponible": true
         },
         {
-          "id": 2,
-          "texto": "que unos cerditos"
+          "nombre": "wc",
+          "disponible": true
         },
         {
-          "id": 3,
-          "texto": "vivian felices hasta que vino el lobo"
+          "nombre": "jardin",
+          "disponible": true
+        },
+        {
+          "nombre": "cocina",
+          "disponible": false
         }
       ]
     },
     {
       "id": 2,
-      "titulo": "Caperucita Roja",
-      "autor": "Perrault",
-      "paginas": [
+      "nombre": "Estudio en Bilbao",
+      "precio": 2000000,
+      "alquiler": false,
+      "habitaciones": 150,
+      "foto": "https://madridescribe.com/wp-content/uploads/2017/10/img_64977.jpg",
+      "direccion": "Abandoibarra Etorb., 2, 48009 Bilbo",
+      "servicios": [
         {
-          "id": 1,
-          "texto": "Érase una vez..."
+          "nombre": "tv",
+          "disponible": true
         },
         {
-          "id": 2,
-          "texto": "que unos una niña tenía una capa roja como la sangre"
+          "nombre": "wc",
+          "disponible": true
+        },
+        {
+          "nombre": "jardin",
+          "disponible": true
+        },
+        {
+          "nombre": "cocina",
+          "disponible": true
         }
       ]
+    },
+    {
+      "id": 3,
+      "nombre": "Basauri",
+      "precio": 720,
+      "alquiler": true,
+      "habitaciones": 27,
+      "foto": "http://www.socialistasvizcainos.com/upload/original-Ayuntamiento-de-Basauri-Ayuntamiento-de-Basauri-4eeb93778aaad.jpg",
+      "direccion": "Kareaga Goikoa, 52, 48970 Basauri",
+      "servicios": [
+        {
+          "nombre": "tv",
+          "disponible": true
+        },
+        {
+          "nombre": "wc",
+          "disponible": true
+        },
+        {
+          "nombre": "jardin",
+          "disponible": false
+        },
+        {
+          "nombre": "cocina",
+          "disponible": false
+        }
+      ]
+    },
+    {
+      "id": 4,
+      "nombre": "San Mames",
+      "precio": 20000000,
+      "alquiler": false,
+      "habitaciones": 1,
+      "foto": "https://www.aupaathletic.com/comun/estadios_fotos/foto_estadio-1355.jpg",
+      "direccion": "Rafael Moreno Pitxitxi s/n, 48013 Bilbo",
+      "servicios": [
+        {
+          "nombre": "tv",
+          "disponible": false
+        },
+        {
+          "nombre": "wc",
+          "disponible": true
+        },
+        {
+          "nombre": "jardin",
+          "disponible": true
+        },
+        {
+          "nombre": "cocina",
+          "disponible": false
+        }
+      ]
+    },
+    {
+      "id": 5,
+      "nombre": "Pazo oubiño",
+      "precio": 500000,
+      "alquiler": false,
+      "habitaciones": 5,
+      "foto": "https://www.hola.com/imagenes/actualidad/20180216120517/familia-franco-pone-venta-pazo-meiras/0-539-996/pazo-meiras-t.jpg",
+      "direccion": "Calle la felicidad, n4 Vigo - 48657",
+      "servicios": [
+        {
+          "nombre": "tv",
+          "disponible": false
+        },
+        {
+          "nombre": "wc",
+          "disponible": false
+        },
+        {
+          "nombre": "jardin",
+          "disponible": true
+        },
+        {
+          "nombre": "cocina",
+          "disponible": true
+        }
+      ]
+    },
+    {
+      "id": 6,
+      "nombre": "Santutxu",
+      "precio": 600,
+      "alquiler": true,
+      "habitaciones": 3,
+      "foto": "https://d.inmofactory.com/1/98366/13970473/165256531.jpg/300x225/a_fill/",
+      "direccion": "Mazustegi 9, Bilbao - 4800",
+      "servicios": [
+        {
+          "nombre": "tv",
+          "disponible": false
+        },
+        {
+          "nombre": "wc",
+          "disponible": true
+        },
+        {
+          "nombre": "jardin",
+          "disponible": false
+        },
+        {
+          "nombre": "cocina",
+          "disponible": true
+        }
+      ]
+    },
+    {
+      "titulo": "Eder",
+      "direccion": "gdhdfgh",
+      "precio": 20,
+      "habitaciones": 6,
+      "alquiler": "false",
+      "foto": "ddd",
+      "servicios": {
+        "wc": true,
+        "jardin": false,
+        "cocina": true
+      },
+      "id": 7
     }
   ]
 }
