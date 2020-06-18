@@ -4,7 +4,7 @@
     "description": "Recuperación de libros en AngularJS.",
     "main": "index.html",
     "dependencies": {
-        "angular": "^1.6.9"
+        "angular": "^1.8.0"
     },
     "devDependencies": {
         "@types/angular": "^1.6.43",
