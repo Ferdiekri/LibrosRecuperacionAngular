@@ -12,7 +12,7 @@
         "@types/angular-ui-router": "^1.1.40",
         "@uirouter/angularjs": "^1.0.22",
         "@types/node": "^12.12.3",
-        "http-server": "^0.11.1",
+        "http-server": "^0.11.2",
         "json-server": "^0.15.1",
         "typescript": "^3.5.1",
         "concurrently": "^5.0.0"
